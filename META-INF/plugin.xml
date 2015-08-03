@@ -1,0 +1,31 @@
+<idea-plugin version="2">
+  <id>org.siprop.android.opencl.OpenCLCLGenerator</id>
+  <name>Generate OpenCL CL file&#39;s header</name>
+  <version>1.0</version>
+  <vendor email="noritsuna@siprop.org" url="http://www.siprop.org/">SIProp.org</vendor>
+
+  <description><![CDATA[
+      Generate OpenCL&#39;s CL files to each const char* to Single header file.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First version released.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <applicationService serviceImplementation="org.siprop.android.opencl.PluginConfig"/>
+    <applicationConfigurable instance="org.siprop.android.opencl.IdeaConfigurable"></applicationConfigurable>
+  </extensions>
+
+  <actions>
+    <action id="org.siprop.android.opencl.OpenCLCLGenerator" class="org.siprop.android.opencl.OpenCLCLGenerator" text="Generate OpenCL&#39;s CL files header"
+            description="Generate OpenCL&#39;s CL files to each char* in Single header file.">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+</idea-plugin>
