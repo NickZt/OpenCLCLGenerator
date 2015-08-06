@@ -26,11 +26,13 @@ public class OpenCLCLGenerator extends AnAction {
     static final public String DEFAULT_JNI_PATH = "./app/src/main/jni/";
     static final public String DEFAULT_HEADER_NAME = "opencl_cl_files.h";
     static final public String DEFAULT_PREFIX_CL = "CLCL_";
+    static final public String DEFAULT_POSTFIX_SIZE = "__SIZE";
 
 
     private String JNI_PATH = DEFAULT_JNI_PATH;
     private String HEADER_NAME = DEFAULT_HEADER_NAME;
     private String PREFIX_CL = DEFAULT_PREFIX_CL;
+    private String POSTFIX_SIZE = DEFAULT_POSTFIX_SIZE;
 
     private BufferedWriter clHeaderWriter = null;
 
@@ -103,7 +105,8 @@ public class OpenCLCLGenerator extends AnAction {
         clHeaderWriter.write("#ifndef __" + defineName + "__\n");
         clHeaderWriter.write("#define __" + defineName + "__\n");
         clHeaderWriter.newLine();
-
+        clHeaderWriter.write("#include <stddef.h>\n");
+        clHeaderWriter.newLine();
         clHeaderWriter.flush();
 
 
@@ -133,7 +136,8 @@ public class OpenCLCLGenerator extends AnAction {
                 // check extention
                 String fileName = file.getPath().toUpperCase();
                 if (fileName.endsWith(".CL")) {
-                    generateHeader(file);
+                    generateCharValue(file);
+                    generateSizeValue(file);
                 } else {
                     continue;
                 }
@@ -141,7 +145,7 @@ public class OpenCLCLGenerator extends AnAction {
         }
     }
 
-    private void generateHeader(File clFile) throws FileNotFoundException, IOException {
+    private void generateCharValue(File clFile) throws FileNotFoundException, IOException {
 
         if(clHeaderWriter == null) {
             throw new FileNotFoundException("Not Found CL Header's file.");
@@ -160,10 +164,7 @@ public class OpenCLCLGenerator extends AnAction {
         BufferedReader clFileReader = new BufferedReader(new FileReader(clFile));
         String readText = null;
         while ( (readText = clFileReader.readLine()) != null ){
-            // replace \ -> \\
-            readText = readText.replace("\\", "\\\\");
-            // replace " -> \"
-            readText = readText.replace("\"", "\\\"");
+            readText = replaceSpecialCharactors(readText);
 
             StringBuilder writeText = new StringBuilder();
             // insert " to begin of line
@@ -184,6 +185,43 @@ public class OpenCLCLGenerator extends AnAction {
         clHeaderWriter.newLine();
         clHeaderWriter.newLine();
         clHeaderWriter.flush();
-
     }
+    private void generateSizeValue(File clFile) throws FileNotFoundException, IOException {
+
+        if (clHeaderWriter == null) {
+            throw new FileNotFoundException("Not Found CL Header's file.");
+        }
+
+        // Create field name "const size_t "
+        String clFileName = clFile.getName().toUpperCase();
+        // replace . -> _
+        clFileName = clFileName.replace(".", "_");
+        StringBuilder clFileNameSB = new StringBuilder(clFileName);
+        clFileNameSB.delete(clFileName.length() - 3, clFileName.length());
+        // Variable Name = Prefix + CL file name + Postfix
+        clHeaderWriter.write("const size_t " + PREFIX_CL + clFileNameSB + POSTFIX_SIZE + " = ");
+
+        BufferedReader clFileReader = new BufferedReader(new FileReader(clFile));
+        String readText = null;
+        int textCounter = 0;
+        while ((readText = clFileReader.readLine()) != null) {
+            textCounter += readText.length() + 1;
+        }
+        clHeaderWriter.write(textCounter + ";");
+        clHeaderWriter.newLine();
+        clHeaderWriter.newLine();
+        clHeaderWriter.newLine();
+        clHeaderWriter.flush();
+    }
+
+    private String replaceSpecialCharactors(String text) {
+        String replacedText = text;
+        // replace \ -> \\
+        replacedText = replacedText.replace("\\", "\\\\");
+        // replace " -> \"
+        replacedText = replacedText.replace("\"", "\\\"");
+
+        return replacedText;
+    }
+
 }
