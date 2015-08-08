@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.siprop.android.opencl.OpenCLCLGenerator</id>
   <name>Generate OpenCL CL file&#39;s header</name>
-  <version>1.02</version>
+  <version>1.03</version>
   <vendor email="noritsuna@siprop.org" url="http://www.siprop.org/">SIProp.org</vendor>
 
   <description><![CDATA[
@@ -9,7 +9,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      Add File Numbers Value as size_t.<br>
+      Fix multiple definition error.<br>
     ]]>
   </change-notes>
 

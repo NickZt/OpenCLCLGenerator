@@ -158,7 +158,7 @@ public class OpenCLCLGenerator extends AnAction {
         StringBuilder clFileNameSB = new StringBuilder(clFileName);
         clFileNameSB.delete(clFileName.length() - 3, clFileName.length());
         // Variable Name = Prefix + CL file name
-        clHeaderWriter.write("const char *" + PREFIX_CL + clFileNameSB + " = ");
+        clHeaderWriter.write("static const char *" + PREFIX_CL + clFileNameSB + " = ");
         clHeaderWriter.newLine();
 
         BufferedReader clFileReader = new BufferedReader(new FileReader(clFile));
@@ -199,7 +199,7 @@ public class OpenCLCLGenerator extends AnAction {
         StringBuilder clFileNameSB = new StringBuilder(clFileName);
         clFileNameSB.delete(clFileName.length() - 3, clFileName.length());
         // Variable Name = Prefix + CL file name + Postfix
-        clHeaderWriter.write("const size_t " + PREFIX_CL + clFileNameSB + POSTFIX_SIZE + " = ");
+        clHeaderWriter.write("static const size_t " + PREFIX_CL + clFileNameSB + POSTFIX_SIZE + " = ");
 
         BufferedReader clFileReader = new BufferedReader(new FileReader(clFile));
         String readText = null;
