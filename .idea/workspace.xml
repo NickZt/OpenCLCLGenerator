@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f233033-198f-4000-83dd-e98afb324dca" name="Default" comment="Add File Numbers Value as size_t.">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCL_CL_Generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCL_CL_Generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCL_CL_Generator.jar" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCL_CL_Generator.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/siprop/android/opencl/IdeaConfigurable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ua/zt/mezon/android/opencl/IdeaConfigurable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/siprop/android/opencl/OpenCLCLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ua/zt/mezon/android/opencl/OpenCLCLGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/siprop/android/opencl/PluginConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ua/zt/mezon/android/opencl/PluginConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/siprop/android/opencl/PluginForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ua/zt/mezon/android/opencl/PluginForm.form" afterDir="false" />
-    </list>
+    <list default="true" id="1f233033-198f-4000-83dd-e98afb324dca" name="Default" comment="Changed the name of the installation package to be able to use both this plugin and Noritsu. Changed to support new kernel transfer format" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1438896853367</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed the name of the installation package to be able to use both this plugin and Noritsu. Changed to support new kernel transfer format">
+      <created>1587762875790</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587762875790</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,7 +232,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add File Numbers Value as size_t." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add File Numbers Value as size_t." />
+    <MESSAGE value="Changed the name of the installation package to be able to use both this plugin and Noritsu. Changed to support new kernel transfer format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the name of the installation package to be able to use both this plugin and Noritsu. Changed to support new kernel transfer format" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2642" y="200" width="375" height="654" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1587759425880">
@@ -284,10 +280,18 @@
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
     <state x="2249" y="162" width="1024" height="845" key="SettingsEditor/1920.0.1680.1050/0.27.1920.1053@1920.0.1680.1050" timestamp="1587760873185" />
+    <state x="2429" y="263" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587762884584">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2429" y="263" width="800" height="528" key="Vcs.Push.Dialog.v2/1920.0.1680.1050/0.27.1920.1053@1920.0.1680.1050" timestamp="1587762884584" />
     <state x="2451" y="138" width="618" height="777" key="find.popup" timestamp="1587761279351">
       <screen x="1920" y="0" width="1680" height="1050" />
     </state>
     <state x="2451" y="138" width="618" height="777" key="find.popup/1920.0.1680.1050/0.27.1920.1053@1920.0.1680.1050" timestamp="1587761279351" />
+    <state x="2572" y="427" width="515" height="199" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1587762924651">
+      <screen x="1920" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2572" y="427" width="515" height="199" key="git4idea.remote.GitConfigureRemotesDialog/1920.0.1680.1050/0.27.1920.1053@1920.0.1680.1050" timestamp="1587762924651" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

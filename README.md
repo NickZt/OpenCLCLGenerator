@@ -8,3 +8,5 @@ Download from: https://github.com/madeye/opencl-android-proprietary
 
 If you want to use this plugin for your Android Studio, please see: How to Build & Use OpenCL on Android Studio http://www.slideshare.net/noritsuna/how-to-build-use-opencl-on-android-studio
 
+UPD. Changed the name of the installation package to be able to use both this plugin and Noritsu. Change is made for additional support new kernel transfer format
+https://plugins.jetbrains.com/plugin/14192-generate-header-file-from-opencl--cl-file-s/
