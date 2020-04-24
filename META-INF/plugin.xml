@@ -1,32 +1,36 @@
-<idea-plugin version="2">
-  <id>org.siprop.android.opencl.OpenCLCLGenerator</id>
-  <name>Generate OpenCL CL file&#39;s header</name>
-  <version>1.03</version>
-  <vendor email="noritsuna@siprop.org" url="http://www.siprop.org/">SIProp.org</vendor>
+<idea-plugin>
+    <id>ua.zt.mezon.android.opencl.OpenCLCLGenerator</id>
+    <name>Generate header file from OpenCL *.CL file&#39;s</name>
+    <version>0.01</version>
+    <vendor email="nickmezon@gmail.com" url="https://github.com/NickZt">NickZt</vendor>
 
-  <description><![CDATA[
-      Generate OpenCL&#39;s CL files to each const char* to Single header file.<br>
+    <description><![CDATA[
+     The plugin will generate * .h with prepared variables for the openCL wrappers function from * .CL files into each const char ** into one single header file.
+     based on work  noritsuna@siprop.org" from http://www.siprop.org<br>
     ]]></description>
 
-  <change-notes><![CDATA[
-      Fix multiple definition error.<br>
+    <change-notes><![CDATA[
+      Add char** compatibility
+       based on work  noritsuna@siprop.org" url="http://www.siprop.org<br>
+      <br>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <idea-version since-build="131"/>
+    <idea-version since-build="131"/>
 
-  <depends>com.intellij.modules.java</depends>
-  <depends>org.jetbrains.android</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.android</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceImplementation="org.siprop.android.opencl.PluginConfig"/>
-    <applicationConfigurable instance="org.siprop.android.opencl.IdeaConfigurable"></applicationConfigurable>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="ua.zt.mezon.android.opencl.PluginConfig"/>
+        <applicationConfigurable instance="ua.zt.mezon.android.opencl.IdeaConfigurable"></applicationConfigurable>
+    </extensions>
 
-  <actions>
-    <action id="org.siprop.android.opencl.OpenCLCLGenerator" class="org.siprop.android.opencl.OpenCLCLGenerator" text="Generate OpenCL&#39;s CL files header"
-            description="Generate OpenCL&#39;s CL files to each char* in Single header file.">
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
-    </action>
-  </actions>
+    <actions>
+        <action id="ua.zt.mezon.android.opencl.OpenCLCLGenerator" class="ua.zt.mezon.android.opencl.OpenCLCLGenerator"
+                text="Generate OpenCL&#39;s const from CL files to C header"
+                description="Generate OpenCL&#39;s CL files to each char** in Single header file.">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

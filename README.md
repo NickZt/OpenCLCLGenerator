@@ -1,4 +1,4 @@
-This is one of Android Studio Plugin. It generates OpenCL's CL files to each const char* to Single C header file.
+This is one of Android Studio Plugin. It generates from OpenCL's CL files to each const char** to Single C header file.
 
 ATTENTION OpenCL Drivers of Android have been removed since Android4.2 . You have to install OpenCL Drivers to your Android.
 
